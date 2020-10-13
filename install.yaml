@@ -1,0 +1,18 @@
+- name: Install apt packages
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  become: yes
+  become_user: root
+  become_method: sudo
+  loop: "{{ packages }}"
+
+- name: Create dots alias
+  shell: alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+- name: Set git status to hide untracked files
+  shell: dotfiles config --local status.showUntrackedFiles no
+
+- name: Checkout dotfiles
+  shell: dotfiles checkout
+

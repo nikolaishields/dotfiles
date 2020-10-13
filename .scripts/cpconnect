@@ -1,0 +1,9 @@
+#!/bin/sh
+sudo -v
+echo "Press Yubi Key (we need Yubi Key PW)"
+cat <(echo "$MANAGE2PW") - | sudo -n /usr/sbin/openconnect \
+	--user 'n.shields@cpanel.net'              \
+	--useragent 'Mozilla/5.0 (Linux) Firefox'  \
+	--authgroup 'Development'                  \
+	--passwd-on-stdin                          \
+	'https://vpn.webpros.com/'                 ;
