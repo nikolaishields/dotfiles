@@ -1,0 +1,38 @@
+#!/usr/bin/env ansible-playbook
+---
+- hosts: localhost
+  vars:
+    packages:
+      - git
+      - screenkey
+      - vim
+      - i3
+      - firmware-iwlwifi
+      - curl
+      - wget 
+      - fzf 
+      - ripgrep 
+      - xcape 
+      - arandr 
+      - zsh 
+  tasks:
+  - name: Install apt packages
+    apt: name={{ packages }} state=present
+    become: yes
+    become_user: root
+    become_method: sudo
+  
+  - name: Install oh-my-zsh
+    shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  
+  - name Clone dotfiles repository
+    shell: git clone --bare https://gitlab.com/nikolaishields/dotfiles.git $HOME/.dotfiles
+  
+  - name: Create dots alias
+    shell: alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+  
+  - name: Set git status to hide untracked files
+    shell: dotfiles config --local status.showUntrackedFiles no
+  
+  - name: Checkout dotfiles
+    shell: dotfiles checkout
