@@ -15,7 +15,6 @@ exec --no-startup-id pgrep -x sxhkd -c $HOME/.config/sxhkd/sxhkdrc $HOME/.config
 exec --no-startup-id i3-msg exec slack
 for_window [class="Slack"] move to workspace $ws5
 exec --no-startup-id i3-msg exec firefox
-for_window [class="Firefox"] move to workspace $ws3
 exec --no-startup-id i3-msg exec spotify
 
 # Application Window Assignments
