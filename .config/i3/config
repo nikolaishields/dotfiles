@@ -23,6 +23,8 @@ for_window [class="Slack | mini panel"] move container to scratchpad
 
 # mouse follows focus
 focus_follows_mouse yes
+
+# Workspaces
 set $ws1 "1:dev"
 set $ws2 "2:term"
 set $ws3 "3:web"
