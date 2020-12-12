@@ -12,8 +12,6 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xcape -e 'Control_L=Escape'
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id pgrep -x sxhkd -c $HOME/.config/sxhkd/sxhkdrc $HOME/.config/sxhkd/sxhkdrc_i3 > /dev/null || sxhkd -c $HOME/.config/sxhkd/sxhkdrc $HOME/.config/sxhkd/sxhkdrc_i3 &
-
-
 exec --no-startup-id i3-msg exec slack
 exec --no-startup-id i3-msg exec firefox
 exec --no-startup-id i3-msg exec spotify
