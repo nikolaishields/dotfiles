@@ -1,1 +1,1 @@
-export PATH=$HOME/.gloo/bin:$HOME/.scripts:$PATH
+#export PATH=$HOME/.scripts:$PATH

@@ -1,6 +1,10 @@
 # Auto-install plugins if they haven't been installed
 plugins=(git fzf direnv vi-mode zsh-completions terraform)
-source ~/.zplug/init.zsh
+if [ -f ${HOME}/.zplug/init.zsh ]; then
+    source ${HOME}/.zplug/init.zsh
+else
+  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+fi
 vim +PlugInstall +qall >/dev/null 2>&1
 zplug "plugins/direnv",            from:oh-my-zsh
 zplug "plugins/fzf",               from:oh-my-zsh
