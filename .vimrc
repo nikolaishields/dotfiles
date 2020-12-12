@@ -125,6 +125,10 @@ let g:auto_save_postsave_hook = ':silent ! c &>/dev/null'
 let g:terraform_align=0
 let g:terraform_fmt_on_save=0
 
+" set colorscheme
+colorscheme molokai
+syntax enable
+
 call plug#begin('~/.vim/plugged')
 Plug '907th/vim-auto-save'
 Plug 'Lenovsky/nuake'
@@ -142,7 +146,3 @@ Plug 'tomasr/molokai'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 call plug#end()
-
-" set colorscheme
-colorscheme molokai
-syntax enable
