@@ -1,6 +1,6 @@
 #!/bin/bash
 B=$(git branch --show-current)
-c
+commit
 git reset "$(git log master.."$B" --oneline | awk '{print $1}' | tail -1)"
 git add -A
 git stash
