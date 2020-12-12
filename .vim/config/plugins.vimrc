@@ -34,7 +34,7 @@ let g:nuake_position = 'bottom'
 
 " Plugin: vim-auto-save
 let g:auto_save = 1
-let g:auto_save_postsave_hook = ':silent ! c &>/dev/null'
+let g:auto_save_postsave_hook = ':silent ! commit.sh &>/dev/null'
 
 " Plugin: vim-terraform
 let g:terraform_align=0
