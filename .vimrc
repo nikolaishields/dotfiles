@@ -28,6 +28,8 @@ set expandtab
 " enable smart line number behaviour
 set number relativenumber
 
+" set colorscheme
+
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
