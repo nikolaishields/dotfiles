@@ -3,7 +3,6 @@ set $mod Mod1
 font pango:monospace 8
 
 # startup applications
-xec --no-startup-id setterm -blank 0 -powersave off -powerdown 0
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id nm-applet
@@ -14,16 +13,7 @@ exec --no-startup-id i3-msg exec slack
 exec --no-startup-id i3-msg exec firefox
 exec --no-startup-id i3-msg exec spotify
 
-# Application Window Assignments
-for_window [class="signal-desktop"] move to workspace $ws5
-for_window [class="Spotify"] move to workspace $ws4
-for_window [class="Firefox"] move to workspace $ws3
-for_window [class="Slack"] move to workspace $ws5
-
-# window border
-default_border pixel 2
-default_floating_border pixel 2
-# mouse follows focus
+# Mousew follows focus
 focus_follows_mouse yes
 
 # Workspaces
@@ -34,6 +24,5 @@ set $ws4 "4:music"
 set $ws5 "5:com"
 
 bar {
-        status_command i3status
-        strip_workspace_numbers yes
+    status_command i3status
 }
