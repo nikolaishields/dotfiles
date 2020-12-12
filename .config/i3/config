@@ -2,7 +2,6 @@ set $mod Mod1
 
 font pango:monospace 8
 
-
 # startup applications
 xec --no-startup-id setterm -blank 0 -powersave off -powerdown 0
 exec --no-startup-id xset s off
