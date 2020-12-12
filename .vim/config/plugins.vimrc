@@ -1,5 +1,4 @@
 " PLUGIN CONFIG
-
 " Plugin: FZF
 " Fuzzy search for files in working dir
 nnoremap <silent> <C-f> :Files<CR>
