@@ -20,6 +20,7 @@ exec --no-startup-id i3-msg exec spotify
 for_window [class="Spotify"] move to workspace $ws4
 
 # Application Window Assignments
+for_window [class="signal-desktop"] move to workspace $ws5
 
 # window border
 default_border pixel 2
