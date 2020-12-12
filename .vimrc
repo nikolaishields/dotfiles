@@ -29,6 +29,7 @@ set expandtab
 set number relativenumber
 
 " set colorscheme
+colorscheme molokai
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
