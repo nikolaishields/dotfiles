@@ -1,6 +1,6 @@
 " Set leader to space
 let mapleader = "\<Space>"
-
+" settings
 set autowrite      " Automatically :write before running commands
 set backspace=2    " Backspace deletes like most programs in insert mode
 set encoding=utf-8 
