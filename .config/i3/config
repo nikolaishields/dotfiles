@@ -35,7 +35,4 @@ bar {
         status_command i3status
         strip_workspace_numbers yes
 }
-
-# window border
-default_border pixel 2
 default_floating_border pixel 2
