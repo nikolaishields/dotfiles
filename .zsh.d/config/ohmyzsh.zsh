@@ -1,4 +1,4 @@
 # Oh My ZSH
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussel"
+ZSH_THEME="robbyrussell"
 source $ZSH/oh-my-zsh.sh
