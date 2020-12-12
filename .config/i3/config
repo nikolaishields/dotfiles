@@ -19,7 +19,6 @@ for_window [class="Firefox"] move to workspace $ws3
 exec --no-startup-id i3-msg exec spotify
 for_window [class="Spotify"] move to workspace $ws4
 for_window [class="signal-desktop"] move to workspace $ws5
-for_window [class="Slack | mini panel"] move container to scratchpad
 
 # window border
 default_border pixel 2
