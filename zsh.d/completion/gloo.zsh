@@ -1,0 +1,1 @@
+source <(glooctl completion zsh)

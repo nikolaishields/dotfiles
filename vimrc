@@ -1,24 +1,22 @@
-set encoding=utf-8
 " Set leader to space
 let mapleader = "\<Space>"
 
-set backspace=2   " Backspace deletes like most programs in insert mode
+set autowrite      " Automatically :write before running commands
+set backspace=2    " Backspace deletes like most programs in insert mode
+set encoding=utf-8 
 set history=50
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
-set modelines=0 " CVE-2019-12735
+set incsearch      " do incremental searching
+set laststatus=2   " Always display the status line
+set modelines=0    " CVE-2019-12735
 set nomodeline
-
-" turn hybrid line numbers on
-set number relativenumber
-set nu rnu
-set modelines=0 " CVE-2019-12735
+set noswapfile
+set ruler          " show the cursor position all the time
+set showcmd        " display incomplete commands
+set t_vb=
+set visualbell
 
 " Make it obvious where 80 characters is
-set textwidth=80
+set textwidth=120
 set colorcolumn=+1
 
 " Softtabs, 2 spaces
@@ -26,6 +24,9 @@ set tabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
+
+" enable smart line number behaviour
+set number relativenumber
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
@@ -39,8 +40,8 @@ set complete+=kspell
 " Autoinstall plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Source the vimrc file after saving it
@@ -63,6 +64,12 @@ set splitright
 
 " Quick directory change
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
+" Git Mob
+nnoremap <leader>me :!git solo<CR>
+nnoremap <leader>kmt :!git mob kmt<CR>
+nnoremap <leader>rag :!git mob rag<CR>
+nnoremap <leader>awe :!git mob kmt rag<CR>
 
 nnoremap <leader>wq :w<CR>:bd<CR>
 
@@ -105,24 +112,32 @@ map <C-e> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
 
-" Plugin: vim-terraform
-let g:terraform_fmt_on_save=1
-
 " Plugin: nauke
 nnoremap <Leader>t :Nuake<CR>
 let g:nuake_position = 'bottom'
 
+" Plugin: vim-auto-save
+let g:auto_save = 1
+let g:auto_save_postsave_hook = ':silent ! c &>/dev/null'
+
+" Plugin: vim-terraform
+let g:terraform_align=0
+let g:terraform_fmt_on_save=0
+
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
+Plug '907th/vim-auto-save'
+Plug 'Lenovsky/nuake'
+Plug 'ajmwagar/vim-deus'
 Plug 'christoomey/vim-run-interactive'
 Plug 'hashivim/vim-terraform'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'pbrisbin/vim-mkdir'
-Plug 'tpope/vim-surround'
 Plug 'rolf007/multiplayer.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'Lenovsky/nuake'
+Plug 'scrooloose/nerdtree'
+Plug 'tomasr/molokai'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 call plug#end()
