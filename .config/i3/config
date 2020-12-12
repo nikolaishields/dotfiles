@@ -5,6 +5,7 @@ font pango:monospace 8
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # startup applications
+
 exec --no-startup-id i3-msg exec slack
 exec --no-startup-id i3-msg exec firefox
 exec --no-startup-id i3-msg exec spotify
