@@ -1,5 +1,6 @@
 " Set leader to space
 let mapleader = "\<Space>"
+
 " settings
 set autowrite      " Automatically :write before running commands
 set backspace=2    " Backspace deletes like most programs in insert mode
@@ -27,10 +28,6 @@ set expandtab
 
 " enable smart line number behaviour
 set number relativenumber
-
-" set colorscheme
-colorscheme molokai
-syntax enable
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
@@ -145,3 +142,7 @@ Plug 'tomasr/molokai'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 call plug#end()
+
+" set colorscheme
+colorscheme molokai
+syntax enable
