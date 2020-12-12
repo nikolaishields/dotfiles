@@ -37,4 +37,3 @@ bar {
         status_command i3status
         strip_workspace_numbers yes
 }
-
