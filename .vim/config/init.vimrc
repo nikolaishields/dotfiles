@@ -21,6 +21,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'gko/vim-coloresque'
 call plug#end()
 
 
