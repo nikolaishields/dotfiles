@@ -1,5 +1,5 @@
 #! /bin/sh
-pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x sxhkd > /dev/null || sxhkd -c $HOME/.config/sxhkdrc -c $HOMR/.config/sxhkdrc_bsp &
 
 bspc monitor eDP-1 -d I II III IV V VI VII VIII IX X
 
@@ -17,8 +17,6 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      false
 bspc config single_monocle true
 
-bspc rule -a firefox desktop='^2'
-bspc rule -a chromium desktop='^3'
 bspc rule -a Zathura state=tiled
 bspc rule -a Thunar state=pseudo_tiled rectangle=750x450+0+0
 
