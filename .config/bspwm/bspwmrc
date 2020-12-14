@@ -4,7 +4,7 @@ pgrep -x sxhkd -c $HOME/.config/sxhkd/common.sxhkd $HOME/.config/sxhkd/bspwm.sxh
 bspc monitor -d dev term web music coms
 
 bspc config border_width        1
-bspc config window_gap          1
+bspc config window_gap          5
 
 # Theme
 bspc config normal_border_color   "#44475a"
