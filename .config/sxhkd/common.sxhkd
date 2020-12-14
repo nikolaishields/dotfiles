@@ -1,29 +1,22 @@
 # wm independent hotkeys
 
-# Terminal
-ctrl + alt + super + shift + Return
-  kitty
+# make sxhkd reload its configuration files:
+alt + Escape
+	pkill -USR1 -x sxhkd
 
+# Terminal
 alt + Return
   kitty
 
-ctrl + alt + super + shift + i; {l,s,w,q}
-  rft {lp,ss,sw,ks}
-
+# tmux session management
 alt + i; {l,s,w,q}
   rft {lp,ss,sw,ks}
 
 # Launcher
-ctrl + alt + super + shift + d; {r,w,s}
-  rofi -show {run,window,ssh}
-
 alt + d; {r,w,s}
   rofi -show {run,window,ssh}
 
 # Displays
-ctrl + alt + super + shift + x; {d,p,l}
-  autorandr --load {docked,portable,laptop} && dunstify -i debian-logo "sxhkd config" "Reloaded key bindings"
-
 alt + x; {d,p,l}
   autorandr --load {docked,portable,laptop} && dunstify -i debian-logo "sxhkd config" "Reloaded key bindings"
 
@@ -39,5 +32,3 @@ F1
 
 F4
   pactl set-source-mute @DEFAULT_SOURCE@ toggle
-
-

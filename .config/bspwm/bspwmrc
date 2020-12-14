@@ -1,22 +1,20 @@
 #! /bin/sh
-pgrep -x sxhkd > /dev/null || sxhkd -c $HOME/.config/sxhkdrc -c $HOMR/.config/sxhkdrc_bsp &
+pgrep -x sxhkd -c $HOME/.config/sxhkd/common.sxhkd $HOME/.config/sxhkd/bspwm.sxhkd > /dev/null || sxhkd -c $HOME/.config/sxhkd/common.sxhkd $HOME/.config/sxhkd/bspwm.sxhkd &
 
-bspc monitor eDP-1 -d I II III IV V VI VII VIII IX X
+bspc monitor -d dev term web music coms
 
-bspc config border_width 	1
-bspc config window_gap          15
+bspc config border_width        1
+bspc config window_gap          1
 
-bspc config active_border_color '#273238'
-bspc config normal_border_color '#273238'
-bspc config focused_border_color '#ffffff'
-bspc config presel_feedback_color '#273238'
+# Theme
+bspc config normal_border_color   "#44475a"
+bspc config active_border_color   "#6272a4"
+bspc config focused_border_color  "#8be9fd"
+bspc config presel_feedback_color "#6272a4"
+
 bspc config pointer_follows_monitor true
 
-bspc config split_ratio          0.50
-bspc config borderless_monocle   true
-bspc config gapless_monocle      false
-bspc config single_monocle true
-
-bspc rule -a Zathura state=tiled
-bspc rule -a Thunar state=pseudo_tiled rectangle=750x450+0+0
-
+bspc config split_ratio             0.50
+bspc config borderless_monocle      true
+bspc config gapless_monocle         false
+bspc config single_monocle          true
