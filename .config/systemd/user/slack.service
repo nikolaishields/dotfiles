@@ -1,0 +1,9 @@
+[Unit]
+Description=Slack Desktop
+
+[Service]
+ExecStart=/usr/bin/slack
+
+[Install]
+WantedBy=user-applications.target
+

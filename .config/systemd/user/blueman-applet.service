@@ -1,0 +1,9 @@
+[Unit]
+Description=Blueman-applet
+
+[Service]
+ExecStart=/usr/bin/blueman-applet
+
+[Install]
+WantedBy=user-applications.target
+
