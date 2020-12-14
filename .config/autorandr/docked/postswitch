@@ -1,6 +1,6 @@
 #!/bin/bash
-i3-msg '[workspace='1:dev']' move workspace to output DP1-3
-i3-msg '[workspace='2:term']' move workspace to output DP1-3
-i3-msg '[workspace='5:com']' move workspace to output DP1-1
-i3-msg '[workspace='4:music']' move workspace to output DP1-1
-i3-msg '[workspace='3:web']' move workspace to output DP1-1
+bspc desktop dev   --to-monitor DP1-3 --follow
+bspc desktop term  --to-monitor DP1-3
+bspc desktop web   --to-monitor DP1-1 --follow
+bspc desktop music --to-monitor DP1-1
+bspc desktop coms  --to-monitor DP1-1

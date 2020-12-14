@@ -1,5 +1,6 @@
 # Auto-install plugins if they haven't been installed
 plugins=(git fzf direnv vi-mode zsh-completions terraform)
+
 if [ -f ${HOME}/.zplug/init.zsh ]; then
     source ${HOME}/.zplug/init.zsh
 else
