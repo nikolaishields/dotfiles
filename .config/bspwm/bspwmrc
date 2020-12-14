@@ -1,6 +1,8 @@
 #! /bin/sh
 pgrep -x sxhkd -c $HOME/.config/sxhkd/common.sxhkd $HOME/.config/sxhkd/bspwm.sxhkd > /dev/null || sxhkd -c $HOME/.config/sxhkd/common.sxhkd $HOME/.config/sxhkd/bspwm.sxhkd &
 
+picom &
+
 bspc monitor -d dev term web music coms
 
 bspc config border_width        1
